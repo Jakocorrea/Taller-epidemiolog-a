@@ -1,0 +1,170 @@
+
+R version 4.5.1 (2025-06-13) -- "Great Square Root"
+Copyright (C) 2025 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+source("/Users/jakosmacbook/Documents/GitHub/Taller-epidemiolog-a/Taller 2/Analisis_2.r", encoding = "UTF-8")
+> source("/Users/jakosmacbook/Documents/GitHub/Taller-epidemiolog-a/Taller 2/Analisis_2.r", encoding = "UTF-8")
+Loading required package: foreign
+Loading required package: survival
+Loading required package: MASS
+Loading required package: nnet
+Loading required package: carData
+
+Attaching package: ‘psych’
+
+The following object is masked from ‘package:car’:
+
+    logit
+
+The following objects are masked from ‘package:epiDisplay’:
+
+    alpha, cs, lookup
+
+Registered S3 method overwritten by 'rmutil':
+  method         from 
+  plot.residuals psych
+
+=======================================================
+INICIO TALLER 2 - LOG
+=======================================================
+Working dir:
+ /Users/jakosmacbook/Documents/GitHub/Taller-epidemiolog-a 
+
+Columnas (normalizadas):
+[1] "ETNIA"       "OCUPACION"   "QH42"        "EDAD"        "SEXO"       
+[6] "ESCOLARIDAD" "SISBEN"      "IMCNEW"      "TLMEETT"    
+
+=======================================================
+Prevalencias globales
+=======================================================
+
+  No   Sí <NA> 
+8686 4850  925 
+
+Prevalencia de sobrepeso (solo IMC=Sobrepeso):
+
+   No    Sí  <NA> 
+60.07 33.54  6.40 
+
+  No   Sí <NA> 
+6182 7354  925 
+
+Prevalencia de sobrepeso+obesidad (IMC>=25):
+
+   No    Sí  <NA> 
+42.75 50.85  6.40 
+
+=======================================================
+Prevalencia de sobrepeso+obesidad estratificada (IMCNEW2)
+=======================================================
+
+-- EDADNEW --
+   
+      No   Sí
+  1 2248  839
+  2 3934 6515
+
+-- EDAD_2GRUPOS --
+       
+          No   Sí
+  18–29 3017 1500
+  30–64 3165 5854
+
+-- SEXO_NEW --
+        
+           No   Sí
+  Hombre 2760 2915
+  Mujer  3422 4439
+
+-- ETNIA_NEW --
+                
+                   No   Sí
+  No minoría     5552 6535
+  Minoría étnica  630  819
+
+-- SISBEN_NEW --
+            
+               No   Sí
+  Sisbén 1–3 3831 4419
+  Sisbén 4–6 2351 2935
+
+-- ESCOLARIDAD_NEW --
+              
+                 No   Sí
+  Básica/Media 4614 5703
+  Téc/Univ/Pos 1556 1621
+
+-- OCUPACION_NEW --
+          
+             No   Sí
+  Inactivo 2577 2767
+  Activo   3605 4587
+
+-- DISCAPACIDAD_NEW --
+    
+       No   Sí
+  No 5884 6899
+  Sí  298  455
+
+-- TLMEETT_NEW --
+           
+              No   Sí
+  No cumple 4802 5984
+  Cumple    1380 1370
+
+[OK] Exportado: out_taller2/prevalencia_SO_por_variable.csv
+
+=======================================================
+Tabla 7 (para manuscrito): Frecuencia, % y Prevalencia SO por categoría
+=======================================================
+           Variable      Categoria Frecuencia Porcentaje Prevalencia_SO_pct
+1           EDADNEW              1       3087      22.81              27.18
+2           EDADNEW              2      10449      77.19              62.35
+3      EDAD_2GRUPOS          18–29       4517      33.37              33.21
+4      EDAD_2GRUPOS          30–64       9019      66.63              64.91
+5          SEXO_NEW         Hombre       5675      41.93              51.37
+6          SEXO_NEW          Mujer       7861      58.07              56.47
+7         ETNIA_NEW     No minoría      12087      89.30              54.07
+8         ETNIA_NEW Minoría étnica       1449      10.70              56.52
+9        SISBEN_NEW     Sisbén 1–3       8250      60.95              53.56
+10       SISBEN_NEW     Sisbén 4–6       5286      39.05              55.52
+11  ESCOLARIDAD_NEW   Básica/Media      10317      76.46              55.28
+12  ESCOLARIDAD_NEW   Téc/Univ/Pos       3177      23.54              51.02
+13    OCUPACION_NEW       Inactivo       5344      39.48              51.78
+14    OCUPACION_NEW         Activo       8192      60.52              55.99
+15 DISCAPACIDAD_NEW             No      12783      94.44              53.97
+16 DISCAPACIDAD_NEW             Sí        753       5.56              60.42
+17      TLMEETT_NEW      No cumple      10786      79.68              55.48
+18      TLMEETT_NEW         Cumple       2750      20.32              49.82
+
+[OK] Exportado: out_taller2/taller2_tabla7_pub.csv
+
+=======================================================
+Checklist de outputs
+=======================================================
+Generado en out_taller2/ :
+- output_taller2.txt (este log)
+- prevalencias_globales.csv
+- tablas_estratificadas/ (frecuencias y proporciones)
+- prevalencia_SO_por_variable.csv
+- taller2_tabla7_pub.csv (Tabla 7 final)
+
+=======================================================
+FIN TALLER 2 - LOG
+=======================================================
+> 
