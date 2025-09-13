@@ -150,7 +150,7 @@ if (!all(c("0","1") %in% levels(base$imcnewNEW))) {
 vars_tabla7 <- c("EDADnew","SEXONEW","ETNIA2","SISBENNEW",
                  "ESCOLARIDADnew","OCUPACIONnew","QH42NEW","TlmeettNEW")
 
-# Función robusta para armar la fila por variable
+# Función para armar la fila por variable :D
 arma_tabla7 <- function(var, outcome = "imcnewNEW") {
   if (!(var %in% names(base))) {
     warning(sprintf("La variable '%s' no existe en 'base'. Se omite.", var))
@@ -180,7 +180,7 @@ arma_tabla7 <- function(var, outcome = "imcnewNEW") {
   n_cat <- as.integer(tab_x)
   pct_cat <- round(100 * (n_cat / sum(n_cat)), 2)
 
-  # Cruce como matriz para evitar dropeos raros
+  # Cruce como matriz para evitar dropeos raros cuz yknows R
   tb <- as.matrix(table(x, y))
 
   # Numerador = casos "1" (si no existe la columna, usar 0s)
@@ -201,14 +201,14 @@ arma_tabla7 <- function(var, outcome = "imcnewNEW") {
   out
 }
 
-# Construir y exportar la tabla
+# Building tablaaaaaaa
 tabla7_list <- lapply(vars_tabla7, arma_tabla7)
 tabla7_p7 <- do.call(rbind, tabla7_list)
 
-# Mostrar en consola
+# show output to be sure bro
 cat("\n================ TABLA PUNTO 7 (con NA excluidos) ================\n")
 print(tabla7_p7)
 
-# Guardar a CSV
+# CSV pa verlo lendo 
 write.csv(tabla7_p7, file = "tabla_punto7.csv", row.names = FALSE)
 cat("\n[OK] Exportado: tabla_punto7.csv\n")
