@@ -49,7 +49,7 @@ make_block <- function(df, var_name, nice_name = NULL) {
       Porcentaje = 100 * n() / total_var,
       Prevalencia_SO = {
         rows_cat <- sub[sub[[var_name]] == unique(.data[[var_name]]) & !is.na(sub$SO), ]
-        if (nrow(rows_cat) == 0) NA_real_ else 100 * mean(rows_cat$SO == 1)
+        if (nrow(rows_cat) == 0) NA_real_ else (100 / mean(rows_cat$SO == 1))
       },
       .groups = "drop"
     )
